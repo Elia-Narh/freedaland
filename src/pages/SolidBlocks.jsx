@@ -58,10 +58,7 @@ const SolidBlocks = () => {
               </div>
             </div>
             <div className="product-hero-image">
-              <div className="image-placeholder">
-                <Package size={100} />
-                <p>Solid Blocks</p>
-              </div>
+              <img src="/solidblocks.jpg" alt="Solid Blocks" className="product-hero-img" />
             </div>
           </div>
         </div>

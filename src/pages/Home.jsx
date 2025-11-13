@@ -140,7 +140,7 @@ const Home = () => {
         <div className="container">
           <div className="why-choose-content">
             <div className="why-choose-text">
-              <h2 className="section-title">Why Choose Freedaland Construction?</h2>
+              <h2 className="section-title">Why Choose Us?</h2>
               <p className="section-subtitle">
                 Over 15 years of excellence in construction and real estate
               </p>
@@ -172,10 +172,7 @@ const Home = () => {
               </Link>
             </div>
             <div className="why-choose-image">
-              <div className="image-placeholder">
-                <Building2 size={100} />
-                <p>Construction Excellence</p>
-              </div>
+              <img src="/boss.jpg" alt="Why Choose Freedaland" className="why-choose-img" />
             </div>
           </div>
         </div>

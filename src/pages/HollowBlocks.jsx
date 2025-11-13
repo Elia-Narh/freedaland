@@ -58,10 +58,7 @@ const HollowBlocks = () => {
               </div>
             </div>
             <div className="product-hero-image">
-              <div className="image-placeholder">
-                <Package size={100} />
-                <p>Hollow Blocks</p>
-              </div>
+              <img src="/hollowblock.jpg" alt="Hollow Blocks" className="product-hero-img" />
             </div>
           </div>
         </div>

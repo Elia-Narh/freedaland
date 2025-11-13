@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, ChevronDown, Building2, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
+import { Menu, X, ChevronDown, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -98,11 +98,7 @@ const Header = () => {
           <div className="navbar-content">
             {/* Logo */}
             <Link to="/" className="logo">
-              <Building2 size={32} />
-              <div className="logo-text">
-                <span className="logo-name">Freedaland</span>
-                <span className="logo-tagline">Construction</span>
-              </div>
+              <img src="/freedaland logo.png" alt="Freedaland Logo" className="logo-image" />
             </Link>
 
             {/* Desktop Menu */}
@@ -145,9 +141,22 @@ const Header = () => {
             </div>
 
             {/* CTA Button */}
-            <Link to="/contact" className="btn btn-primary cta-btn desktop">
-              Get a Quote
-            </Link>
+            <div className="header-actions">
+              <div className="header-social-links">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
+                  <Linkedin size={18} />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
+                  <Facebook size={18} />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
+                  <Instagram size={18} />
+                </a>
+              </div>
+              <Link to="/contact" className="btn btn-primary cta-btn desktop">
+                Enquire
+              </Link>
+            </div>
 
             {/* Mobile Menu Toggle */}
             <button className="mobile-menu-toggle" onClick={toggleMenu}>
