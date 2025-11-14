@@ -11,10 +11,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="footer-column">
             <div className="footer-logo">
-              <Building2 size={28} />
               <div className="logo-text">
-                <span className="logo-name">Freedaland</span>
-                <span className="logo-tagline">Construction</span>
+               <img src="/freedaland logo.png" alt="Freedaland Logo" className="logo-image" />
+
               </div>
             </div>
             <p className="footer-description">

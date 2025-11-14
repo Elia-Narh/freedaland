@@ -296,8 +296,8 @@ const PropertyRentals = () => {
                 Contact Us
                 <ArrowRight size={20} />
               </Link>
-              <a href="tel:+1234567890" className="btn btn-secondary btn-large">
-                Call: +123 456 7890
+              <a href="tel:+233 557869504" className="btn btn-secondary btn-large">
+                Call: +233 557869504
               </a>
             </div>
           </div>

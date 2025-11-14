@@ -319,8 +319,8 @@ const Architecture = () => {
               <Link to="/contact" className="btn btn-primary btn-large">
                 Contact Us
               </Link>
-              <a href="tel:+1234567890" className="btn btn-secondary btn-large">
-                Call: +123 456 7890
+              <a href="tel: +233557869504" className="btn btn-secondary btn-large">
+                Call: +233557869504
               </a>
             </div>
           </div>
