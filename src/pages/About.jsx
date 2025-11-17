@@ -102,7 +102,8 @@ const About = () => {
                 dedicated professionals, we continue to build on our legacy of quality and trust.
               </p>
             </div>
-            <img src="/arcti.jpg" alt="15 Years of Excellence" className="image-placeholder-large" />
+            <img src="/arcti.jpg" alt="15 Years of Excellence"
+             className="image-placeholder-large" />
           </div>
         </div>
       </section>
