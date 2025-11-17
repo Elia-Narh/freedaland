@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -9,8 +10,21 @@ import LandSales from './pages/LandSales'
 import PropertyRentals from './pages/PropertyRentals'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import { initScrollAnimations } from './utils/scrollAnimations'
 
 function App() {
+  useEffect(() => {
+    // Initialize scroll animations when component mounts
+    const observer = initScrollAnimations()
+
+    // Cleanup on unmount
+    return () => {
+      if (observer) {
+        observer.disconnect()
+      }
+    }
+  }, [])
+
   return (
     <Router>
       <div className="app">

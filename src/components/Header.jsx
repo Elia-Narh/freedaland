@@ -96,66 +96,71 @@ const Header = () => {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-content">
-            {/* Logo */}
-            <Link to="/" className="logo">
-              <img src="/freedaland logo.png" alt="Freedaland Logo" className="logo-image" />
-            </Link>
-
-            {/* Desktop Menu */}
-            <div className="nav-menu desktop">
-              {menuItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="nav-item"
-                  onMouseEnter={() => item.dropdown && setActiveDropdown(index)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  {item.dropdown ? (
-                    <>
-                      <span className={`nav-link dropdown-trigger ${item.dropdown.some(sub => isActivePath(sub.path)) ? 'active' : ''}`}>
-                        {item.title}
-                        <ChevronDown size={16} className={activeDropdown === index ? 'rotated' : ''} />
-                      </span>
-                      <div className={`dropdown-menu ${activeDropdown === index ? 'show' : ''}`}>
-                        {item.dropdown.map((subItem, subIndex) => (
-                          <Link 
-                            key={subIndex}
-                            to={subItem.path} 
-                            className={`dropdown-link ${isActivePath(subItem.path) ? 'active' : ''}`}
-                          >
-                            {subItem.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <Link 
-                      to={item.path} 
-                      className={`nav-link ${isActivePath(item.path) ? 'active' : ''}`}
-                    >
-                      {item.title}
-                    </Link>
-                  )}
-                </div>
-              ))}
+            {/* Logo Section */}
+            <div className="navbar-brand">
+              <Link to="/" className="logo">
+                <img src="/freedaland logo2.png" alt="Freedaland Logo" className="logo-image" />
+              </Link>
             </div>
 
-            {/* CTA Button */}
-            <div className="header-actions">
-              <div className="header-social-links">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
-                  <Linkedin size={18} />
-                </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
-                  <Facebook size={18} />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
-                  <Instagram size={18} />
-                </a>
+            {/* Navigation Section */}
+            <div className="navbar-nav">
+              {/* Desktop Menu */}
+              <div className="nav-menu desktop">
+                {menuItems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="nav-item"
+                    onMouseEnter={() => item.dropdown && setActiveDropdown(index)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    {item.dropdown ? (
+                      <>
+                        <span className={`nav-link dropdown-trigger ${item.dropdown.some(sub => isActivePath(sub.path)) ? 'active' : ''}`}>
+                          {item.title}
+                          <ChevronDown size={16} className={activeDropdown === index ? 'rotated' : ''} />
+                        </span>
+                        <div className={`dropdown-menu ${activeDropdown === index ? 'show' : ''}`}>
+                          {item.dropdown.map((subItem, subIndex) => (
+                            <Link 
+                              key={subIndex}
+                              to={subItem.path} 
+                              className={`dropdown-link ${isActivePath(subItem.path) ? 'active' : ''}`}
+                            >
+                              {subItem.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <Link 
+                        to={item.path} 
+                        className={`nav-link ${isActivePath(item.path) ? 'active' : ''}`}
+                      >
+                        {item.title}
+                      </Link>
+                    )}
+                  </div>
+                ))}
               </div>
-              <Link to="/contact" className="btn btn-primary cta-btn desktop">
-                Enquire
-              </Link>
+
+              {/* CTA Button & Social Links */}
+              <div className="header-actions">
+                <div className="header-social-links">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
+                    <Linkedin size={18} />
+                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
+                    <Facebook size={18} />
+                  </a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="header-social-link">
+                    <Instagram size={18} />
+                  </a>
+                </div>
+                <Link to="/contact" className="btn btn-primary cta-btn desktop">
+                  Enquire
+                </Link>
+              </div>
             </div>
 
             {/* Mobile Menu Toggle */}

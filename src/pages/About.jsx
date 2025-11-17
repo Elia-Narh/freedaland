@@ -102,10 +102,7 @@ const About = () => {
                 dedicated professionals, we continue to build on our legacy of quality and trust.
               </p>
             </div>
-            <div className="image-placeholder-large">
-              <Building2 size={100} />
-              <p>15 Years of Excellence</p>
-            </div>
+            <img src="/arcti.jpg" alt="15 Years of Excellence" className="image-placeholder-large" />
           </div>
         </div>
       </section>

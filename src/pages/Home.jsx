@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Building2, Home as HomeIcon, Ruler, MapPin, Check, Star, Award, Users } from 'lucide-react'
+import AnimatedCounter from '../components/AnimatedCounter'
+import { useParallax } from '../hooks/useParallax'
 
 const Home = () => {
+  const parallaxRef = useParallax(0.3) // Subtle parallax effect
+
   const services = [
     {
       icon: <Building2 size={40} />,
@@ -34,15 +38,15 @@ const Home = () => {
   ]
 
   const stats = [
-    { number: '15+', label: 'Years Experience' },
-    { number: '500+', label: 'Projects Completed' },
-    { number: '1000+', label: 'Happy Clients' },
-    { number: '50+', label: 'Team Members' }
+    { number: 15, label: 'Years Experience', suffix: '+' },
+    { number: 500, label: 'Projects Completed', suffix: '+' },
+    { number: 1000, label: 'Happy Clients', suffix: '+' },
+    { number: 50, label: 'Team Members', suffix: '+' }
   ]
 
   const testimonials = [
     {
-      name: 'John Anderson',
+      name: 'jonathan Boadu',
       role: 'Property Developer',
       content: 'Freedaland Construction provided excellent materials and service for our commercial project. Their blocks are top quality and delivery was always on time.',
       rating: 5
@@ -66,25 +70,20 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-overlay"></div>
+        <div ref={parallaxRef} className="hero-bg parallax-element"></div>
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">
-              Building Your Dreams,<br />
-              <span className="highlight">One Block at a Time</span>
-            </h1>
-            <p className="hero-subtitle">
-              Your trusted partner for construction materials, architectural design,
-              land sales, and property rentals. Quality and excellence since 2010.
-            </p>
-            <div className="hero-buttons">
-              <Link to="/contact" className="btn btn-primary btn-large">
-                Get Started
-                <ArrowRight size={20} />
-              </Link>
-              <Link to="/about" className="btn btn-secondary btn-large">
-                Learn More
-              </Link>
+            <div className="hero-text">
+              <p className="hero-eyebrow">Freedaland Construction</p>
+              <h1 className="hero-title">
+                Building Your Dreams,<br />
+                <span className="highlight">One Block at a Time</span>
+              </h1>
+              <p className="hero-subtitle">
+                Your trusted partner for construction materials, architectural design, and quality real estate since 2010.
+              </p>
             </div>
+
           </div>
         </div>
       </section>
@@ -95,7 +94,11 @@ const Home = () => {
           <div className="stats-grid">
             {stats.map((stat, index) => (
               <div key={index} className="stat-card">
-                <div className="stat-number">{stat.number}</div>
+                <AnimatedCounter 
+                  target={stat.number} 
+                  suffix={stat.suffix}
+                  duration={2500}
+                />
                 <div className="stat-label">{stat.label}</div>
               </div>
             ))}

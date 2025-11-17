@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="footer-column">
             <div className="footer-logo">
               <div className="logo-text">
-               <img src="/freedaland logo.png" alt="Freedaland Logo" className="logo-image" />
+               <img src="/freedaland logo2.png" alt="Freedaland Logo" className="logo-image" />
 
               </div>
             </div>
