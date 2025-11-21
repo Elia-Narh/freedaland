@@ -48,6 +48,7 @@ const Header = () => {
     { title: 'About', path: '/about' },
     { title: 'Contact', path: '/contact' }
   ]
+  
 
   // Check if current path matches menu item
   const isActivePath = (path) => {
@@ -157,7 +158,7 @@ const Header = () => {
                     <Instagram size={18} />
                   </a>
                 </div>
-                <Link to="/contact" className="btn btn-primary cta-btn desktop">
+                <Link to="/contact" className="btn btn-secondary cta-btn desktop">
                   Enquire
                 </Link>
               </div>

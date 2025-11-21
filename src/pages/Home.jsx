@@ -1,10 +1,22 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Building2, Home as HomeIcon, Ruler, MapPin, Check, Star, Award, Users } from 'lucide-react'
 import AnimatedCounter from '../components/AnimatedCounter'
 import { useParallax } from '../hooks/useParallax'
 
+const HERO_IMAGES = ['/h2img.jpg', '/h3img.png', '/h4img.png']
+
 const Home = () => {
   const parallaxRef = useParallax(0.3) // Subtle parallax effect
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length)
+    }, 6000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   const services = [
     {
@@ -49,19 +61,22 @@ const Home = () => {
       name: 'jonathan Boadu',
       role: 'Property Developer',
       content: 'Freedaland Construction provided excellent materials and service for our commercial project. Their blocks are top quality and delivery was always on time.',
-      rating: 5
+      rating: 5,
+      image: '/m1.jpg'
     },
     {
       name: 'Sarah Williams',
       role: 'Homeowner',
       content: 'The architectural team designed our dream home perfectly. They listened to our needs and delivered beyond expectations. Highly recommended!',
-      rating: 5
+      rating: 5,
+      image: '/m2.jpg'
     },
     {
       name: 'Michael Chen',
       role: 'Business Owner',
       content: 'We found the perfect commercial space through their rental service. Professional management and fair pricing. Great experience overall.',
-      rating: 5
+      rating: 5,
+      image: '/m3.jpg'
     }
   ]
 
@@ -70,7 +85,16 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-overlay"></div>
-        <div ref={parallaxRef} className="hero-bg parallax-element"></div>
+        <div ref={parallaxRef} className="hero-bg parallax-element">
+          {HERO_IMAGES.map((image, index) => (
+            <div
+              key={image}
+              className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${image})` }}
+              aria-hidden={index !== currentSlide}
+            />
+          ))}
+        </div>
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
@@ -201,7 +225,11 @@ const Home = () => {
                 <p className="testimonial-content">"{testimonial.content}"</p>
                 <div className="testimonial-author">
                   <div className="author-avatar">
-                    {testimonial.name.charAt(0)}
+                    {testimonial.image ? (
+                      <img src={testimonial.image} alt={testimonial.name} />
+                    ) : (
+                      testimonial.name.charAt(0)
+                    )}
                   </div>
                   <div>
                     <div className="author-name">{testimonial.name}</div>
@@ -224,8 +252,8 @@ const Home = () => {
               <Link to="/contact" className="btn btn-primary btn-large">
                 Contact Us Now
               </Link>
-              <a href="tel:+1234567890" className="btn btn-secondary btn-large">
-                Call: +123 456 7890
+              <a href="tel:+233557869504" className="btn btn-secondary btn-large">
+                Call: +233557869504
               </a>
             </div>
           </div>
