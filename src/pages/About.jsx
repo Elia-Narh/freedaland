@@ -71,7 +71,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="page-hero">
         <div className="container">
-          <h1 className="page-title">About Freedaland Construction</h1>
+          <h1 className="page-title">About Us</h1>
           <p className="page-subtitle">
             Building excellence since 2010. Your trusted partner for construction materials,
             architectural design, and real estate solutions.

@@ -54,32 +54,9 @@ const Contact = () => {
     }
   ]
 
-  const departments = [
-    {
-      name: 'Sales & Inquiries',
-      description: 'Questions about our products and services',
-      contact: 'sales@freedaland.com',
-      phone: '+123 456 7891'
-    },
-    {
-      name: 'Technical Support',
-      description: 'Product specifications and technical queries',
-      contact: 'support@freedaland.com',
-      phone: '+123 456 7892'
-    },
-    {
-      name: 'Architecture Services',
-      description: 'Design consultations and project proposals',
-      contact: 'architecture@freedaland.com',
-      phone: '+233 55 786 9504'
-    },
-    {
-      name: 'Real Estate',
-      description: 'Property inquiries and viewings',
-      contact: 'realestate@freedaland.com',
-      phone: '+233 557 869504'
-    }
-  ]
+  
+    
+  
 
   return (
     <div className="contact-page">
@@ -218,32 +195,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Departments */}
-      <section className="section">
-        <div className="container">
-          <h2 className="section-title">Contact by Department</h2>
-          <p className="section-subtitle">Reach out to the right team for faster assistance</p>
-          <div className="departments-grid">
-            {departments.map((dept, index) => (
-              <div key={index} className="department-card">
-                <MessageSquare size={32} />
-                <h3 className="department-name">{dept.name}</h3>
-                <p className="department-description">{dept.description}</p>
-                <div className="department-contacts">
-                  <a href={`mailto:${dept.contact}`} className="department-link">
-                    <Mail size={16} />
-                    {dept.contact}
-                  </a>
-                  <a href={`tel:${dept.phone}`} className="department-link">
-                    <Phone size={16} />
-                    {dept.phone}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Emergency Contact */}
       <section className="section section-gray">
@@ -252,7 +204,7 @@ const Contact = () => {
             <Phone size={48} />
             <h2>Need Immediate Assistance?</h2>
             <p>For urgent inquiries or emergencies, call us directly</p>
-            <a href="tel:+1234567890" className="btn btn-primary btn-large">
+            <a href="tel:+233557869503" className="btn btn-primary btn-large">
               Call Now: +233557869504
             </a>
           </div>
