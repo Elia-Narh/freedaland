@@ -16,7 +16,8 @@ const LandSales = () => {
       price: 250000,
       zoning: 'Commercial',
       features: ['Corner lot', 'High traffic area', 'Utilities connected', 'Clear title'],
-      status: 'Available'
+      status: 'Available',
+      image: '/land1.jpg'
     },
     {
       id: 2,
@@ -26,7 +27,8 @@ const LandSales = () => {
       price: 180000,
       zoning: 'Residential',
       features: ['Gated community', 'Mountain view', 'Water & electricity', 'Paved road access'],
-      status: 'Available'
+      status: 'Available',
+      image: '/land2.jpg'
     },
     {
       id: 3,
@@ -36,7 +38,8 @@ const LandSales = () => {
       price: 420000,
       zoning: 'Industrial',
       features: ['Direct highway access', 'Large frontage', 'Level terrain', 'Zoning approved'],
-      status: 'Available'
+      status: 'Available',
+      image: '/land3.jpg'
     },
     {
       id: 4,
@@ -46,7 +49,8 @@ const LandSales = () => {
       price: 150000,
       zoning: 'Agricultural',
       features: ['Fertile soil', 'Water access', 'Irrigation system', 'Farm road'],
-      status: 'Available'
+      status: 'Available',
+      image: '/land1.jpg'
     },
     {
       id: 5,
@@ -56,7 +60,8 @@ const LandSales = () => {
       price: 195000,
       zoning: 'Residential',
       features: ['Lake view', 'Quiet neighborhood', 'Underground utilities', 'Park nearby'],
-      status: 'Available'
+      status: 'Available',
+      image: '/land2.jpg'
     },
     {
       id: 6,
@@ -66,7 +71,8 @@ const LandSales = () => {
       price: 550000,
       zoning: 'Mixed-Use',
       features: ['Prime location', 'High density zoning', 'Transit accessible', 'Investment opportunity'],
-      status: 'Reserved'
+      status: 'Reserved',
+      image: '/land3.jpg'
     }
   ]
 
@@ -139,7 +145,7 @@ const LandSales = () => {
             {filteredProperties.map(property => (
               <div key={property.id} className="property-card">
                 <div className="property-image">
-                  <MapPin size={60} />
+                  <img src={property.image} alt={property.title} />
                   {property.status === 'Reserved' && (
                     <span className="property-badge badge-warning">Reserved</span>
                   )}

@@ -1,0 +1,2 @@
+- [ ] Add image field to each property in the properties array in LandSales.jsx
+- [ ] Update the property-image div in LandSales.jsx to display the image instead of the MapPin icon
