@@ -18,7 +18,8 @@ const PropertyRentals = () => {
       area: '1,400 sq ft',
       price: 1800,
       features: ['Furnished', 'Parking', 'Balcony', 'Modern kitchen'],
-      available: true
+      available: true,
+      Image: '/rentalhouses/h4rent.jpg'
     },
     {
       id: 2,
@@ -28,7 +29,8 @@ const PropertyRentals = () => {
       area: '2,500 sq ft',
       price: 3500,
       features: ['Reception area', 'Conference room', 'Parking spaces', 'High-speed internet'],
-      available: true
+      available: true,
+      Image: '/rentalhouses/h4rent1.jpg'
     },
     {
       id: 3,
@@ -40,7 +42,8 @@ const PropertyRentals = () => {
       area: '3,200 sq ft',
       price: 3200,
       features: ['Swimming pool', 'Garden', 'Garage', 'Security'],
-      available: true
+      available: true,
+      Image: '/rentalhouses/h4rent2.jpg'
     },
     {
       id: 4,
@@ -50,7 +53,8 @@ const PropertyRentals = () => {
       area: '1,200 sq ft',
       price: 2800,
       features: ['Corner unit', 'Display windows', 'Storage room', 'High foot traffic'],
-      available: true
+      available: true,
+      Image: '/rentalhouses/h4rent3.jpg'
     },
     {
       id: 5,
@@ -62,7 +66,8 @@ const PropertyRentals = () => {
       area: '950 sq ft',
       price: 1200,
       features: ['Pet-friendly', 'Backyard', 'Parking', 'Quiet neighborhood'],
-      available: true
+      available: true,
+      Image: '/rentalhouses/h4rent4.jpg'
     },
     {
       id: 6,
@@ -74,7 +79,8 @@ const PropertyRentals = () => {
       area: '650 sq ft',
       price: 1100,
       features: ['Fully furnished', 'Gym access', 'Utilities included', 'Security'],
-      available: false
+      available: false,
+      Image: '/rentalhouses/h4rent5.jpg'
     }
   ]
 
@@ -143,7 +149,7 @@ const PropertyRentals = () => {
             {filteredRentals.map(rental => (
               <div key={rental.id} className="property-card">
                 <div className="property-image">
-                  {rental.type === 'Residential' ? <Home size={60} /> : <Building size={60} />}
+                  <img src={rental.Image} alt={rental.title} />
                   {rental.available ? (
                     <span className="property-badge badge-success">Available</span>
                   ) : (
