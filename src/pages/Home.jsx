@@ -65,14 +65,14 @@ const Home = () => {
       image: '/m1.jpg'
     },
     {
-      name: 'Sarah Williams',
+      name: 'William Marley',
       role: 'Homeowner',
       content: 'The architectural team designed our dream home perfectly. They listened to our needs and delivered beyond expectations. Highly recommended!',
       rating: 5,
       image: '/m2.jpg'
     },
     {
-      name: 'Michael Chen',
+      name: 'Dominic Yeboah',
       role: 'Business Owner',
       content: 'We found the perfect commercial space through their rental service. Professional management and fair pricing. Great experience overall.',
       rating: 5,
